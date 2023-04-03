@@ -10,7 +10,6 @@ Priority Queue operations:
 #include<stdio.h>
 #include<stdlib.h>
 int heapSize=-1;
-//heapSize=sizeof(arr)/sizeof(int) --Not needed
 
 void swap(int *a, int *b){
     int temp;
