@@ -1,5 +1,28 @@
+
 #include<stdio.h>
 #include<stdlib.h>
+
+struct Edge{
+	int vertex1;
+	int vertex2;
+	int weight;
+};
+int g=6;
+int degree_counter(int arr[g][g],int n){
+	int count=0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(arr[i][j]==1){
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+
+
+
 int main(void){
     FILE *fp; //pointer to file
     fp=fopen("read.txt","r");
@@ -25,6 +48,11 @@ int main(void){
 		printf("\n");
 	}
     fclose(fp);
-    
+    int h=degree_counter(mat,6);
+    struct Edge edges[h];
+    for (int i = 0; i < 6; i++)
+    {
+        /* code */
+    }
     return 0;
 }

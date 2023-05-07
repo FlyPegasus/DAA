@@ -1,42 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 int g=4;
-char s[4]={'A','B','C','D'};
-
-struct Node{
-	struct Node* head;
-	struct Node* next;
-	char data;
-};
-struct Node *head=NULL;
-void insertBeg(char item){
-	struct Node* curr=(struct Node*)malloc(sizeof(struct Node));
-	curr->data=item;
-	curr->next=head;
-	head=curr;
-}
-void display(){
-	struct Node* temp=head;
-	while(temp!=NULL){
-		temp=temp->next;
-		printf("%c--->",temp->data);
-	}
-	printf("\n");
-}
-
-void adj_list(int arr[g][g],int n){
-	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			if(arr[i][j]==1){
-				insertBeg(s[j]);
-			}
-		}
-		//printf("\n");
-	}
-	display();
-}
-
-int main(){
+int graph[4][4];
+void readGraph(int graph[g][g]){
 	FILE *fp;
 	fp=fopen("Ex.txt","r");
 	if(fp==NULL){
@@ -45,19 +11,51 @@ int main(){
 	}
 	int n;
 	fscanf(fp,"%d",&n);
-	int graph[n][n];
 	int i,j;
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
 			fscanf(fp,"%d",&graph[i][j]);
 		}
 	}
-	for(i=0;i<n;i++){
-		for(j=0;j<n;j++){
+	
+	fclose(fp);
+}
+void display(){
+	for(int i=0;i<g;i++){
+		for(int j=0;j<g;j++){
 			printf("%3d",graph[i][j]);
 		}
 		printf("\n");
 	}
-	fclose(fp);
+}
+
+struct Node{
+	int vertex;
+	struct Node* next;
+};
+
+struct Node* v[4];
+
+void makeAdj(){
+	for(int i=0;i<g;i++){
+		for(int j=0;j<g;j++){
+			if (graph[i][j]==1)
+			{
+				v[i]->vertex=j;
+			}
+			
+		}
+		printf("\n");
+	}
+}
+
+int main(){
+	readGraph(graph);
+	for (int i = 0; i < g; i++)
+	{
+		v[i]=NULL;
+	}
+	
+	display();
 	return 0;
 }
