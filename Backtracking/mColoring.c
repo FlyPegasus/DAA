@@ -3,7 +3,7 @@
 int m=4;
 int n;
 int graph[10][10];
-int arr[10]={0};
+int arr[10]={0};//color combination storage
 int count=0;
 void readGraph(){
     FILE *fp;
