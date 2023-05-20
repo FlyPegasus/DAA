@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-int m=3;
+int m=4;
 int n;
 int graph[10][10];
 int arr[10]={0};
+int count=0;
 void readGraph(){
     FILE *fp;
 	fp=fopen("read.txt","r");
@@ -13,21 +14,21 @@ void readGraph(){
 	}
 	fscanf(fp,"%d",&n);
 	int i,j;
-	for(i=0;i<n;i++){
-		for(j=0;j<n;j++){
+	for(i=1;i<=n;i++){
+		for(j=1;j<=n;j++){
 			fscanf(fp,"%d",&graph[i][j]);
 		}
 	}
 	fclose(fp);
-    for(i=0;i<n;i++){
-		for(j=0;j<n;j++){
+    for(i=1;i<=n;i++){
+		for(j=1;j<=n;j++){
 			printf("%2d",graph[i][j]);
 		}
         printf("\n");
 	}
 }
 void display(){
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
         printf("%3d",arr[i]);
     }
@@ -41,7 +42,7 @@ void nextValue(int k){
             return;
         }
         int i;
-        for (i=0; i < n; i++)
+        for (i=1; i < k; i++)
         {
             if (graph[i][k]==1 && arr[i]==arr[k])
             {
@@ -62,14 +63,10 @@ void mColoring(int k){
         {
             return;
         }
-        if (k==n-1)
+        if (k==n)
         {
-            //display();//writing possible solution
-            for (int i = 0; i < n; i++)
-            {
-                printf("%3d",arr[i]);
-            }
-            printf("\n");
+            count++;
+            display();//writing possible solution
         }
         else
         {
@@ -80,12 +77,7 @@ void mColoring(int k){
 
 int main(void){
     readGraph();
-    mColoring(0);
+    mColoring(1);
+    printf("Count: %d\n",count);
     return 0;
 }
-
-
-/*
-Time Complexity:
-
-*/

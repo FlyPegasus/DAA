@@ -75,7 +75,7 @@ void display(){
 
 int main(void){
     readGraph();
-    bfs(2);
+    bfs(3);
     display();
     return 0;
 }

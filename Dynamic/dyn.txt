@@ -1,0 +1,3 @@
+Dynamic Programming is about storing intermediate results and using them again for solving the bigger problem.
+
+Using the Bottom Up Approach in MCM, i.e. we need to use the smaller subproblems to build up the bigger one.

@@ -2,3 +2,11 @@ Records
 -------
 
 1) Topological Sorting
+2) Use of HashSet
+
+
+Notes
+-----
+
+1) Greedy Technique tries to find the best possible solution by following the best path.
+2) Backtracking Technique uses the Brute Force approach to reach for all possible solutions.

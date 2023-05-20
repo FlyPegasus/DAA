@@ -53,7 +53,7 @@ int main(){
 	readGraph(graph);
 	for (int i = 0; i < g; i++)
 	{
-		v[i]=NULL;
+		v[i]=NULL;//v[i] corresponds to head node
 	}
 	
 	display();
