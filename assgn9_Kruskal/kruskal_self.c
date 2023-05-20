@@ -11,7 +11,6 @@ typedef struct Edge
     int wt;
 } edge;
 int parent[4];
-int rank[4];
 
 int simpleFind(int p[], int v){
     if (p[v]==v)
