@@ -12,8 +12,6 @@ The concept is to find a particular pattern.
 #define MAX 9999
 int n=4;
 int M[10][10];//Cost storage matrix
-//Phase testing
-int S1[4][4]={{0,0,0,2},{0,0,1,2},{0,0,0,2},{0,0,0,0}};
 int s[10][10];//APSP order storage matrix
 int p[5]={9,7,5,2,8};
 void Mcm(){
